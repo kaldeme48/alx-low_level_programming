@@ -1,16 +1,12 @@
-#include <stdio.h>
-#include <stdlib.h>
-
+#include "main.h"
 
 /**
-* print_alphabet - checks alphabet
+* print alphabet - in lower case
 *
 * Return: Always 0 (Success)
 */
-
 void print_alphabet(void)
 {
-
 int n;
 
 for (n = 'a'; n <= 'z'; n++)
