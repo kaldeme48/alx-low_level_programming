@@ -1,4 +1,6 @@
-#include "holberton.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 
 /**
 * print_alphabet - checks alphabet
