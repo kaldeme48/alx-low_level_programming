@@ -1,13 +1,13 @@
-#include "putchar.h"
+#include "main.h"
 /**
-* main - Entry point
+* main - Prints putchar
 *
 * Return: Always 0 (Success)
 */
 int main(void)
 {
 _putchar('_');
-[A[B_putchar('p');
+_putchar('p');
 _putchar('u');
 _putchar('t');
 _putchar('c');
