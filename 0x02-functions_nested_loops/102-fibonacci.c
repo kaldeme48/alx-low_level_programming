@@ -1,26 +1,27 @@
 #include <stdio.h>
-
 /**
-* main - fibonacci
-*
-*
-* Return: (sucess)
+* main - entry point
+* purpose - prints sum of multiples of 3 and 5 below 1024
+* Return: 0
 */
-
 int main(void)
 {
-unsigned long int i;
-unsigned long int bef = 1;
-unsigned long int aft = 2;
+int i = 0;
+long int a = 0, b = 1, next;
 
-printf("%lu", bef);
-
-for (i = 1; i < 50; i++)
+while (i < 50)
 {
-printf(", %lu", aft);
-aft += bef;
-bef = aft - bef;
+next = a + b;
+a = b;
+b = next;
+printf("%lu", next);
+
+if (i < 49)
+{
+printf(", ");
 }
-printf("\n[A[B");
+i++;
+}
+putchar('\n');
 return (0);
 }
