@@ -1,22 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
-* main - Entry point
-*
-* Return: Always 0
+* main - entry point
+* purpose - sum of all multiple of 3 and 5 below 1024
+* Return: 0
 */
 int main(void)
 {
-long unsigned int i;
-long unsigned int sum = 0;
+int c = 0;
+int sum = 0;
 
-for (i = 0; i <= 1024; i++)
+while (c < 1024)
 {
-if ((i % 5 == 0) || (i % 3 == 0))
+if (c % 3 == 0 || c % 5 ==0)
 {
-sum = sum + 1;
+sum += c;
 }
+
+c++;
 }
-printf("%ld\n", sum);
-getchar();
+printf("%i\n", sum);
 return (0);
 }
