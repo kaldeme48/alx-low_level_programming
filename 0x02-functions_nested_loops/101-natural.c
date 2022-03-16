@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
-* main - entry point
+* main - Entry point
 *
-* Return: always 0
+* Return: Always 0
 */
 int main(void)
 {
@@ -16,7 +16,7 @@ if ((i % 5 == 0) || (i % 3 == 0))
 sum = sum + 1;
 }
 }
-printf("%d\n", sum);
+printf("%ld\n", sum);
 getchar();
 return (0);
 }
