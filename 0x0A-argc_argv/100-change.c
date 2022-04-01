@@ -1,66 +1,58 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
-int change(int cents);
 /**
- * main - prints the minimum number of coins to make change for an amount of money
- * @argc: arguments
- * @argv: array pointing to arguments
- * Return: 0
+ * isInteger - checks if s is an integer
+ * @s: string to check
+ * Return: 0 or 1
  */
-int main(int argc, char *argv[])
-{
-	if (argc != 2)
-	{
-		printf("%s\n", "Error");
-		return (1);
-	}
-	else if (argc < 0)
-	{
-		return (0);
-	}
 
-	printf("%d\n", change(atoi(argv[1])));
-	return (0);
+int isInteger(const char *s)
+{
+int i = 0;
+while (s[i] != '\0')
+{
+	if (s[i] < '0' || s[i] > '9')
+		return (0);
+	i++;
+}
+return (1);
 }
 
 /**
- * change - get change
- * @cents: amount of coins from main function
- * Return: change
+ * main - adds positive numbers
+ * @argc: int
+ * @argv: list
+ * Return: 0
  */
-int change(int cents)
-{
-	int q = 25, d = 10, n = 5, t = 2, p = 1;
-	int coins;
 
-	while (cents > 0)
+int main(int argc, char const *argv[])
+{
+int i = 0, coinUsed = 0, coin = 0;
+int coins[] = {25, 10, 5, 2, 1};
+
+if (argc != 2)
+{
+	printf("Error\n");
+	return (1);
+}
+if (isInteger(argv[1]))
+{
+	i = atoi(argv[1]);
+	while (i > 0 && coin <= 4)
 	{
-		while (cents >= q)
+		if (i >= coins[coin])
 		{
-			cents -= q;
-			coins++;
+			i -= coins[coin];
+			coinUsed++;
 		}
-		while (cents >= d)
+		else
 		{
-			cents -= d;
-			coins++;
-		}
-		while (cents >= n)
-		{
-			cents -= n;
-			coins++;
-		}
-		while (cents >= t)
-		{
-			cents -= t;
-			coins++;
-		}
-		while (cents >= p)
-		{
-			cents -= p;
-			coins++;
+			coin++;
 		}
 	}
-	return (coins);
+}
+
+printf("%i\n", coinUsed);
+
+return (0);
 }
