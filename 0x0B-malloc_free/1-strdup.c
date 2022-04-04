@@ -1,32 +1,32 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "main.h"
 /**
- * _strdup - Entry point
- * @str: char
+ * *_strdup - Entry point
+ * @str: string
  * Return: 0
  */
+
 char *_strdup(char *str)
 {
-	int i, end;
-	char *array;
+int i = 0, size = 0;
+char *m;
 
-	if (str == NULL)
-		return (NULL);
+if (str == NULL)
+	return (NULL);
 
-	for (end = 0; end <= *str; end++)
-	{
-	}
+for (; str[size] != '\0'; size++)
+;
 
-	end += 1;
-	array = malloc(sizeof(char) * end);
+/*+1 on the size puts the end of string character*/
+m = malloc(size * sizeof(*str) + 1);
 
-	for (i = 0; i < end; i++)
-		array[i] = str[i];
-
-	if (array == NULL)
-		return (NULL);
-	return (array);
+if (m == 0)
+	return (NULL);
+else
+{
+	for (; i < size; i++)
+		m[i] = str[i];
 }
-
-
+return (m);
+}
