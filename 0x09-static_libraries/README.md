@@ -1,4 +1,4 @@
-0x08. C - Static libraries
+0x09. C - Static libraries
 Description
 What you should learn from this project:
 
